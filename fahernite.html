@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Celsius to Fahrenheit Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #041d3d, #4d013a, crimson) no-repeat fixed;
+            text-align: center;
+        }
+
+        #container {
+            background-color: linear-gradient(135deg, #041d3d, #fff, crimson);;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            box-shadow: 0px 0px 10px #eb8888;
+        }
+
+        h1 {
+            color: #080808;
+            font-family: fantasy;
+            font-weight: 400;
+        }
+
+        p {
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fc9dba;
+            border: 1px solid #fc8414;
+            border-radius: 5px;
+        }
+
+        button {
+            background: crimson;
+            color: #fff;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Celsius to Fahrenheit Converter</h1>
+        <p>Enter a temperature in Celsius:</p>
+        <input type="text" id="celsiusInput">
+        <button onclick="convertCelsiusToFahrenheit()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertCelsiusToFahrenheit() {
+            var celsius = parseFloat(document.getElementById("celsiusInput").value);
+            if (!isNaN(celsius)) {
+                var fahrenheit = (celsius * 9/5) + 32;
+                document.getElementById("result").innerHTML = celsius + "°C is equal to " + fahrenheit.toFixed(2) + "°F";
+            } else {
+                document.getElementById("result").innerHTML = "Please enter a valid number for Celsius.";
+            }
+        }
+    </script>
+</body>
+</html>
